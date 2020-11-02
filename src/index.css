@@ -1,0 +1,11 @@
+html body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+    grid-template-columns: 1fr 3fr;
+}
