@@ -12,49 +12,118 @@ body {
 }
 
 .grid-wrapper {
-    height: auto;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 10fr 1fr;
     grid-template-rows: min-content auto min-content;
     grid-template-areas:
-        'header header'
-        'aside content'
-        'footer footer';
+        'header header header'
+        '. content .'
+        ' footer footer footer';
 }
 
 header {
     grid-area: header;
-    background-color: #F8F9FA;
+    background-color: whitesmoke;
 }
 
-aside {
-    grid-area: aside;
-    background-color: aqua;
+header h1 {
+    padding: 5px 0 5px 0;
+    margin: 0;
+    font-size: 20px;
 }
+
 
 div.flex-wrapper {
     grid-area: content;
-    background-color: fuchsia;
     height: 100%;
 }
 
 footer {
     grid-area: footer;
-    background-color: goldenrod;
+    background-color: whitesmoke
 }
 
 .flex-wrapper {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: baseline;
+    justify-content: space-between;
     align-content: flex-start;
-    text-align: center;
     padding: 0;
     margin: 0;
 }
 
 .card-body-small {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     padding: 20px;
+    margin: 10px;
+    flex-grow: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-radius: 5px;
+}
+
+.card-body-wide {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px;
+    margin: 10px;
+    flex-grow: 1;
+    border-style: solid;
+    border-width: 1px;
+    border-color: grey;
+    border-radius: 5px;
+    flex-basis: 100%;
+}
+
+.card-title {
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.card-text p {
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+.card-links a {
+    padding: 0;
+    margin: 0 0 10px 0;
+    color: #008CF5;
+    text-decoration: none;
+}
+
+.card-links a:hover {
+    transition: color 0.5s;
+    color: #0068D6;
+}
+
+.card-body-small h3 {
+    padding: 0;
+    margin: 0;
+}
+
+.card-footer, .card-links{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+}
+
+.card-links a {
+    margin: 0 5px 0 0;
+    padding: 6.4px 4px;
+}
+
+.card-footer p {
+    margin: 0 5px 0 0;
+    padding: 6.4px 5.5px;
+    background-color: #383c45;
+    color: white;
+    border-radius: 5px;
+
 }
