@@ -1,11 +1,60 @@
-html body {
-    margin: 0;
-    padding: 0;
+aside,
+header,
+footer,
+span {
+    padding: 10px;
+}
+
+html,
+body {
     height: 100%;
+    margin: 0;
 }
 
 .grid-wrapper {
+    height: auto;
     display: grid;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: min-content auto min-content;
-    grid-template-columns: 1fr 3fr;
+    grid-template-areas:
+        'header header'
+        'aside content'
+        'footer footer';
+}
+
+header {
+    grid-area: header;
+    background-color: #F8F9FA;
+}
+
+aside {
+    grid-area: aside;
+    background-color: aqua;
+}
+
+div.flex-wrapper {
+    grid-area: content;
+    background-color: fuchsia;
+    height: 100%;
+}
+
+footer {
+    grid-area: footer;
+    background-color: goldenrod;
+}
+
+.flex-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: baseline;
+    align-content: flex-start;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.card-body-small {
+    padding: 20px;
 }
