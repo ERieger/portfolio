@@ -1,14 +1,11 @@
-aside,
 header,
 footer,
 span {
     padding: 10px;
 }
 
-html,
-body {
-    height: 100%;
-    margin: 0;
+* {
+    font-family: 'Roboto', sans-serif;
 }
 
 .grid-wrapper {
@@ -54,12 +51,9 @@ footer {
 }
 
 .card-body-small {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
     padding: 20px;
     margin: 10px;
-    flex-grow: 1;
+    flex: 40%;
     border-style: solid;
     border-width: 1px;
     border-color: grey;
@@ -67,17 +61,22 @@ footer {
 }
 
 .card-body-wide {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
     padding: 20px;
     margin: 10px;
-    flex-grow: 1;
+    flex: 100%;
     border-style: solid;
     border-width: 1px;
     border-color: grey;
     border-radius: 5px;
-    flex-basis: 100%;
+    flex-basis: 1;
+}
+
+@media (max-width: 800px) {
+
+    .card-body-small,
+    .card-body-wide {
+        flex: 100%;
+    }
 }
 
 .card-title {
@@ -107,7 +106,8 @@ footer {
     margin: 0;
 }
 
-.card-footer, .card-links{
+.card-footer,
+.card-links {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -125,5 +125,4 @@ footer {
     background-color: #383c45;
     color: white;
     border-radius: 5px;
-
 }
