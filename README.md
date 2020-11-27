@@ -4,7 +4,6 @@
 
 <p>   
    <img src="https://img.shields.io/badge/-Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black" />
-   <img src="https://img.shields.io/badge/-Javascript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
 </p>
 
 ## Usage
