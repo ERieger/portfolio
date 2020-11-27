@@ -87,13 +87,6 @@ div.flex-wrapper {
         flex: 100%;
     }
 }
-@media (max-width: 1200px) {
-    .grid-wrapper {
-        grid-template-areas:
-        'header header header'
-        'content content content';
-    }
-}
 
 .card-title {
     padding: 0;
