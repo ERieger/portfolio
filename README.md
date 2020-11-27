@@ -1,20 +1,10 @@
-# Portfolio
+# Portfolio ![License](https://img.shields.io/github/license/ERieger/portfolio) ![Issues](https://img.shields.io/github/issues-raw/erieger/portfolio)
 
-![License](https://img.shields.io/github/license/ERieger/portfolio)
-
-> A portfolio to display my previous projects.
-
-## Installation
-
-Clone the repository using [git](https://git-scm.com/).
-
-```sh
-git clone https://github.com/ERieger/portfolio.git
-```
+> A portfolio to display my projects.
 
 ## Usage
 
-To view, open the [index](public/index.html) page in your browser. Hosted version to come.
+To view, open the [hosted](https://portfolio-7a149.firebaseapp.com/) page in your browser.
 
 ## Testing
 
