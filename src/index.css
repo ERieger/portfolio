@@ -16,6 +16,7 @@ span {
 
 * {
     font-family: 'Roboto', sans-serif;
+    transition: all 0.6s;
 }
 
 .grid-wrapper {
@@ -23,22 +24,106 @@ span {
     grid-template-columns: 3fr 10fr 3fr;
     grid-template-rows: min-content auto;
     grid-template-areas:
-        'header header header'
+        'cover cover cover'
         '. content .';
 }
 
-header {
-    grid-area: header;
-    background-color: dodgerblue;
+.cover {
+    grid-area: cover;
+    height: 100vh;
+    background-image: url(./images/programming.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    backdrop-filter: blur(3px);
 }
 
-header h1 {
+.cover h1 {
+    text-align: center;
+}
+
+.credit {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     color: white;
-    padding: 5px 0 5px 0;
-    margin: 0;
-    font-size: 20px;
+    text-decoration: none;
 }
 
+.credit a:link,
+.credit a:visited {
+    color: rgb(194, 194, 194);
+}
+
+.credit a:hover,
+.credit a:active {
+    color: white;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-nav {
+    margin-top: 5px;
+
+}
+
+.main-nav a {
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+}
+
+.main-nav a {
+    color: black;
+    font-size: .99em;
+}
+
+.main-nav a:hover {
+    color: #383c45;
+}
+
+.header {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: transparent;
+}
+
+@media (min-width: 769px) {
+
+    .header,
+    .main-nav {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1150px;
+    }
+
+}
+
+@media (min-width: 1025px) {
+    .header {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+}
 
 div.flex-wrapper {
     grid-area: content;
@@ -79,9 +164,10 @@ div.flex-wrapper {
 @media (max-width: 800px) {
     .grid-wrapper {
         grid-template-areas:
-        'header header header'
-        'content content content';
+            'cover cover cover'
+            'content content content';
     }
+
     .card-body-small,
     .card-body-wide {
         flex: 100%;
@@ -126,13 +212,50 @@ div.flex-wrapper {
 .card-links a {
     margin: 0 5px 0 0;
     padding: 6.4px 4px;
+    font-weight: bold;
 }
 
 .card-footer p {
     margin: 0 5px 0 0;
     padding: 5.5px 5.5px;
-    background-color: #383c45;
-    color: white;
     border-radius: 5px;
     font-size: 13px;
+}
+
+.card-footer .standard {
+    background-color: #0068D6;
+    color: white;
+}
+
+.card-footer .developing {
+    background-color: #ffa600;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.card-footer .complete {
+    background-color: #058001;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.icon.light {
+    height: 15px;
+    margin: 0 3px 0 0;
+    vertical-align: text-top;
+    filter: invert(100%);
+}
+
+.icon.dark {
+    height: 15px;
+    margin: 0 3px 0 0;
+    vertical-align: text-top;
+}
+
+p.light {
+    color: white;
+}
+
+p.dark {
+    color: black;
 }
