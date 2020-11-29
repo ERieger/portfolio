@@ -1,7 +1,9 @@
+/* Nav Bar */
 html,
 body {
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -25,6 +27,7 @@ span {
     grid-template-rows: min-content auto;
     grid-template-areas:
         'cover cover cover'
+        'about about about'
         '. content .';
 }
 
@@ -54,12 +57,37 @@ span {
 
 .credit a:link,
 .credit a:visited {
-    color: rgb(194, 194, 194);
+    color: #c2c2c2;
 }
 
 .credit a:hover,
 .credit a:active {
     color: white;
+}
+
+#scroll-button {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    color: white;
+    text-decoration: none;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#scroll-button:link,
+#scroll-button:visited {
+    color: #c2c2c2;
+}
+
+#scroll-button:hover,
+#scroll-button:active {
+    color: white;
+}
+
+.down-arrow {
+    width: 1rem;
 }
 
 ul {
@@ -99,31 +127,38 @@ a {
     background-color: transparent;
 }
 
-@media (min-width: 769px) {
+/* About Me */
 
-    .header,
-    .main-nav {
-        display: flex;
-    }
+.about-me {
+    grid-area: about;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: center;
+    background-color: dodgerblue;
+}
 
-    .header {
-        flex-direction: column;
-        align-items: center;
+.profile-image {
+    width: 9rem;
+    padding: 5rem;
+    align-self: center;
+}
 
-        width: 80%;
-        margin: 0 auto;
-        max-width: 1150px;
-    }
+.about-me p {
+    color: white;
+    padding: 0 0 5rem 0;
+    text-align: center;
 
 }
 
-@media (min-width: 1025px) {
-    .header {
-        flex-direction: row;
-        justify-content: center;
-    }
-
+.text-constrain {
+    width: 30rem;
+    align-self: center;
 }
+
+/* Flex Cards */
 
 div.flex-wrapper {
     grid-area: content;
@@ -159,28 +194,6 @@ div.flex-wrapper {
 
 .card-body.wide {
     flex: 100%;
-}
-
-@media (max-width: 800px) {
-    .grid-wrapper {
-        grid-template-areas:
-            'cover cover cover'
-            'content content content';
-    }
-
-    .card-body.small,
-    .card-body.medium,
-    .card-body.wide {
-        flex: 100%;
-    }
-}
-
-@media (max-width: 1300px) {
-    .grid-wrapper {
-        grid-template-areas:
-            'cover cover cover'
-            'content content content';
-    }
 }
 
 .card-title {
@@ -220,12 +233,12 @@ div.flex-wrapper {
 
 .card-links a {
     margin: 0 5px 0 0;
-    padding: 6.4px 4px;
+    padding: 6.4px 4px 6.4px 0;
     font-weight: bold;
 }
 
 .card-footer p {
-    margin: 0 5px 0 0;
+    margin: 5px 5px 0 0;
     padding: 5.5px 5.5px;
     border-radius: 5px;
     font-size: 13px;
@@ -267,4 +280,69 @@ p.light {
 
 p.dark {
     color: black;
+}
+
+
+
+
+
+@media (max-width: 1300px) {
+    .grid-wrapper {
+        grid-template-areas:
+            'cover cover cover'
+            'about about about'
+            'content content content';
+    }
+}
+
+@media (min-width: 1025px) {
+    .header {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .grid-wrapper {
+        grid-template-areas:
+            'cover cover cover'
+            'about about about'
+            'content content content';
+    }
+
+    .card-body.small,
+    .card-body.medium,
+    .card-body.wide {
+        flex: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+
+    .header,
+    .main-nav {
+        display: flex;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: center;
+
+        width: 80%;
+        margin: 0 auto;
+        max-width: 1150px;
+    }
+}
+
+@media (max-width: 490px) {
+    .text-constrain {
+        width: 20rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .text-constrain {
+        width: 15rem;
+    }
 }
